@@ -319,6 +319,14 @@ body, html {
     .nav-links a {
         font-size: 1rem;
     }
+
+    .arrow{
+        font-weight: lighter;
+        font-size: 1rem;
+        margin-top: 0px;
+        margin-left: 12px;
+    
+    }
 }
 
 /* Very Small Mobile Styles */
@@ -328,10 +336,23 @@ body, html {
     }
 
     .hero-text h1 {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
     .hero-text p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
+    }
+
+    .navbar{
+        margin-top: 16px;
+    }
+
+    .arrow{
+        font-weight: lighter;
+        font-size: 1rem;
+        margin-top: 0px;
+        margin-left: 12px;
+        
+    
     }
 }
