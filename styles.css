@@ -1,4 +1,4 @@
-/* Reset default styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,12 +12,12 @@ body, html {
     overflow-x: hidden;
 }
 /* style*/
-.dancing-script-nav {
-    font-family: "Dancing Script", cursive;
-    font-optical-sizing: auto;
-    font-weight: 300; 
+.dotgothic16-regular {
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
     font-style: normal;
-}
+  }
+  
 
 .cormorant-garamond-light {
     font-family: "Cormorant Garamond", serif;
@@ -28,10 +28,16 @@ body, html {
   .fira-code-header {
     font-family: "Fira Code", monospace;
     font-optical-sizing: auto;
-    font-weight: 200; /* Choose the weight you want */
+    font-weight: 200; 
     font-style:initial;
 }
   
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing:inherit;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 .video-container {
     position: relative;
@@ -49,10 +55,12 @@ body, html {
     min-height: 100vh;
     z-index: -1;
     object-fit: cover;
+    filter: grayscale(80%) contrast(90%) brightness(70%);
 }
 
 .content {
     display: flex;
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -66,9 +74,10 @@ body, html {
 }
 
 .navbar {
-    position: absolute;
+    
     top: 40px;
     width: 100%;
+    margin: 32px 18px;
     display: flex;
     justify-content: center;
     z-index: 1;
@@ -78,12 +87,12 @@ body, html {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 2.5rem;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.765);
+    font-size: 2rem;
+    text-shadow: 8px 8px 12px rgba(0, 0, 0, 0.765);
 }
 
 .nav-links a.dancing-script-nav {
-    font-weight: 200; 
+    font-weight: 100; 
 }
 
 .hero-text {
@@ -100,14 +109,14 @@ body, html {
     padding-left: 1rem;
     border: 1px solid;
     border-radius: 16px;
-    border-color: rgba(128, 128, 128, 0.765);
+    
     font-size: 2rem;
     margin-bottom: 20px;
     box-shadow: 
-    0 0 10px rgba(135, 135, 135, 0.5), /* Top highlight */
-    0 0 8px rgba(131, 131, 131, 0.4), /* Bottom highlight */
-    0 3px 12px rgba(0, 0, 0, 0.4), /* Underlying shadow */
-    inset 0 -3px 8px rgba(91, 91, 91, 0.2); /* Inner shadow */
+    0 0px 3px rgb(13, 245, 1),
+    4px 4px 10px rgba(192, 71, 2, 0.494), 
+    0 5px 10px rgba(150, 46, 25, 0.4), 
+    inset 0 -2px 4px rgba(91, 91, 91, 0.2); 
 }
 
 .hero-text p {
@@ -116,24 +125,62 @@ body, html {
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.765);
     font-size: 1.5rem;
     margin-bottom: 20px;
+    line-height: 1.4;
 }
 
 .hero-text a {
-    font-size: 1.3rem;
+    font-size: 3rem;
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.765);
     color: rgb(218, 218, 218);
     
 }
 
+.main-container{
+    
+    width: 100%;
+    flex:1;
+    display: flex;
+    position: relative;
+    place-items: center;
+    padding-top: 20px;
+    
+}
+
+.sidebar {
+    position: fixed;
+    left: 2rem;
+    top: 54%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar .btn {
+    text-decoration: none;
+    color: rgb(177, 177, 177);
+    font-size: 1rem;
+    transition: opacity 1s;
+}
+
+.main-view {
+    margin: 0 auto;
+    max-width: 800px;
+    
+    
+}
+
 .down-links{
+    display: flex;
+    flex-direction: column;
     margin-top: 16px;
 }
 
-/* Style for the button */
+
 .btn {
     text-decoration: none;
     padding: 4px 12px;
-    background-color: transparent; /* Primary button color */
+    background-color: transparent; 
     
     color: #fff;
     border-radius: 5px;
@@ -143,38 +190,116 @@ body, html {
     transition: color 0.3s ease;
 }
 
-/* Hover underline effect */
+
 .btn::after {
     content: "";
     position: absolute;
     width: 0;
     height: 1px;
-    background-color: #dad9d9; /* Color of the underline */
+    background-color: #dad9d9; 
     left: 50%;
-    bottom: 0px; /* Position of the underline from the bottom of the button */
+    bottom: 0px; 
     transform: translateX(-50%);
     transition: width 0.3s ease;
 }
 
 .btn:hover::after {
-    width: 80%; /* Adjust to control underline length on hover */
+    width: 80%; 
 }
 
 .btn:hover {
-    color: #fff; /* Keeps text color the same on hover */
+    color: #fff; 
 }
 
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Mobile view */
+@media (max-width: 1100px) {
+    .navbar {
+        padding: 0.8rem;
+        height: 50px;
+    }
+
+    .main-container {
+        margin-top: 50px;
+        padding-bottom: 80px; 
+        min-height: calc(100vh - 130px); 
+    }
+
+    .sidebar {
+        position: fixed;
+        left: 0;
+        bottom: 2px;
+        
+        top: auto;
+        transform: none;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        background: transparent;
+        padding: 1rem;
+        gap: 1.5rem;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-view {
+        
+        padding: 4rem;
+    }
+
     .hero-text h1 {
-        font-size: 2rem;
+        
+        margin-left: 10px;
+        font-size: 1.9rem;
+        margin-bottom: 0.8rem;
+        border: 0.5px solid;
+        box-shadow: 
+    0 0px 2px rgb(13, 245, 1), /* Top highlight  importnt point to see*/
+    2px 2px 6px rgba(192, 71, 2, 0.494), /* Bottom highlight */
+    0 5px 6px rgba(150, 46, 25, 0.4), /* Underlying shadow */
+    inset 0 -2px 4px rgba(91, 91, 91, 0.2); /* Inner shadow */
     }
+
     .hero-text p {
-        font-size: 1rem;
+        font-size: 1.15rem;
+        padding: 0 1rem;
     }
+
+    .sidebar .btn{
+        color: rgb(68, 232, 43);
+    }
+}
+
+/* small Mobile View */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .sidebar {
+        gap: 1rem;
+        padding: 0.8rem;
+    }
+
+    .sidebar .btn {
+        font-size: 0.9rem;
+    }
+
     .nav-links a {
         font-size: 1rem;
-        margin: 0 10px;
+    }
+}
+
+/* Very Small Mobile Styles */
+@media (max-width: 320px) {
+    .sidebar {
+        gap: 0.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
     }
 }
