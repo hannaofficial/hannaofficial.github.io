@@ -84,6 +84,8 @@ body, html {
 }
 
 .nav-links a {
+    display: flex;
+    justify-items: center;
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
@@ -91,8 +93,37 @@ body, html {
     text-shadow: 8px 8px 12px rgba(0, 0, 0, 0.765);
 }
 
-.nav-links a.dancing-script-nav {
-    font-weight: 100; 
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #dad9d9, transparent); 
+    left: 50%;
+    bottom: 0px; 
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+
+
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+    color: #fff;
+}
+
+.arrow{
+    font-weight: lighter;
+    font-size: 1.5rem;
+    margin-top: 4px;
+    margin-left: 12px;
+    /*text-shadow: 3px 3px 10px rgba(239, 75, 4, 0.864);*/
+    text-shadow:
+    -1px -1px 15px rgb(238, 77, 3),  /* Top-left */
+     1px -1.5px 1px rgb(126, 239, 5),  /* Top-right */
+    -1px  1px 0 rgb(224, 6, 252),  /* Bottom-left */
+     1px  1px 0 white;  /* Bottom-right */
+
 }
 
 .hero-text {
@@ -196,20 +227,21 @@ body, html {
     position: absolute;
     width: 0;
     height: 1px;
-    background-color: #dad9d9; 
+    background: linear-gradient(90deg, transparent, #dad9d9, transparent); 
     left: 50%;
     bottom: 0px; 
     transform: translateX(-50%);
     transition: width 0.3s ease;
+
+
 }
 
 .btn:hover::after {
-    width: 80%; 
+    width: 80%;
+    color: #fff;
 }
 
-.btn:hover {
-    color: #fff; 
-}
+
 
 
 /* Mobile view */
