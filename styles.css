@@ -87,11 +87,13 @@ body, html {
     display: flex;
     justify-content: center;
     z-index: 1;
+   
 }
 
 .nav-links a {
     display: flex;
     justify-items: center;
+    
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
@@ -253,8 +255,15 @@ body, html {
 /* Mobile view */
 @media (max-width: 1100px) {
     .navbar {
-        padding: 0.8rem;
-        height: 50px;
+       margin-top: 200px;
+    }
+
+    .navbar{
+        
+    }
+
+    .nav-links{
+
     }
 
     .main-container {
@@ -312,6 +321,10 @@ body, html {
     .hero-text h1 {
         font-size: 1.6rem;
     }
+    .navbar{
+        border: 2px solid green;
+    }
+    
 
     .sidebar {
         gap: 1rem;
@@ -340,6 +353,10 @@ body, html {
     .sidebar {
         gap: 0.5rem;
     }
+    .navbar{
+        border: 2px solid green;
+    }
+    
 
     .hero-text h1 {
         font-size: 0.8rem;
